@@ -1,0 +1,5 @@
+Table: dbo.tblActionPlanCoworker
+beneficiaries: SQL error 208
+coworkers: passed
+upper-strategies: passed
+Read-only database queries passed.

@@ -1,0 +1,16 @@
+D:\projects\SemBackDotNet10\obj\initial-plan-check\bin\Debug\net10.0\check.exe
+D:\projects\SemBackDotNet10\obj\initial-plan-check\bin\Debug\net10.0\check.deps.json
+D:\projects\SemBackDotNet10\obj\initial-plan-check\bin\Debug\net10.0\check.runtimeconfig.json
+D:\projects\SemBackDotNet10\obj\initial-plan-check\bin\Debug\net10.0\check.runtimeconfig.dev.json
+D:\projects\SemBackDotNet10\obj\initial-plan-check\bin\Debug\net10.0\check.dll
+D:\projects\SemBackDotNet10\obj\initial-plan-check\bin\Debug\net10.0\check.pdb
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\check.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\check.AssemblyInfoInputs.cache
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\check.AssemblyInfo.cs
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\check.csproj.CoreCompileInputs.cache
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\check.dll
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\refint\check.dll
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\check.pdb
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\check.genruntimeconfig.cache
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\ref\check.dll
+D:\projects\SemBackDotNet10\obj\initial-plan-check\obj\Debug\net10.0\check.csproj.Up2Date

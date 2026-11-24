@@ -1,0 +1,26 @@
+// Mechanical conversion from Java (controller/EvaluationTeamController.java). Complex bodies are marked with TODO.
+// وابستگی‌های اعلام‌شده: basicDomain/Common/base هنوز ارسال نشده‌اند.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using SemBackDotNet10.evaluationDomain.model.entity;
+using SemBackDotNet10.evaluationDomain.model.dto;
+using SemBackDotNet10.evaluationDomain.repository;
+using SemBackDotNet10.evaluationDomain.service.interf;
+
+
+
+namespace SemBackDotNet10.evaluationDomain.controller;
+
+/// <summary>معادل EvaluationTeamController.java — تزریق وابستگی‌ها با constructor injection انجام شده است.</summary>
+public class EvaluationTeamController
+{
+    // TODO(signature): ObjectMapper mapper = new ObjectMapper()
+    // TODO(signature): public ResponseEntity<?> createEvaluationTeam(@RequestHeader Map<String,String> headers , List<EvaluationTeamDto> result = evaluationTeamService.create(requestI
+    // TODO(signature): public ResponseEntity<?> findAllMasterRater(@RequestHeader Map<String,String> headers , Page<EvaluationTeamDto> allRater = evaluationTeamService.findAllRater(pa
+    // TODO(signature): public ResponseEntity<?> deleteMasterRater(@RequestHeader Map<String,String> headers , evaluationTeamService.deleteRater(evaluationTeamId); return new ResponseE
+    // TODO(signature): public ResponseEntity<?> editRater(@RequestHeader Map<String,String> headers , evaluationTeamService.editRater(evaluationTeamDto); return new ResponseEntity<>(H
+}
