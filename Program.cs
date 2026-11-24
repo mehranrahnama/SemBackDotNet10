@@ -121,6 +121,8 @@ builder.Services.AddScoped<SemBackDotNet10.actionDomain.repository.ActionPlanRep
     SemBackDotNet10.actionDomain.repository.ActionPlanEfRepository>();
 builder.Services.AddScoped<SemBackDotNet10.actionDomain.repository.ActionPlanCatalogRepository,
     SemBackDotNet10.actionDomain.repository.ActionPlanCatalogEfRepository>();
+builder.Services.AddScoped<SemBackDotNet10.actionDomain.mapper.IActionPlanCatalogMapper,
+    SemBackDotNet10.actionDomain.mapper.ActionPlanCatalogMapper>();
 builder.Services.AddScoped<SemBackDotNet10.measureDomain.service.interf.IMeasureService,
     SemBackDotNet10.measureDomain.service.impl.MeasureServiceImpl>();
 builder.Services.AddScoped<SemBackDotNet10.baseDomain.mapper.IPerspectiveMapper,

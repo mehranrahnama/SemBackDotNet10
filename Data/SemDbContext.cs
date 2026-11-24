@@ -199,6 +199,10 @@ public sealed class SemDbContext(DbContextOptions<SemDbContext> options) : DbCon
         modelBuilder.Entity<SemBackDotNet10.actionDomain.model.entity.ActionActPlan>()
             .HasOne(x => x.PlanPeriod).WithMany().HasPrincipalKey(x => x.PlanId)
             .HasForeignKey("planid");
+        modelBuilder.Entity<SemBackDotNet10.actionDomain.model.entity.ActionActPlan>()
+            .Property(x => x.Id).HasConversion<int>();
+        modelBuilder.Entity<SemBackDotNet10.actionDomain.model.entity.ActionActPlan>()
+            .Property(x => x.Month).HasConversion<int?>();
         modelBuilder.Entity<SemBackDotNet10.actionDomain.model.entity.ActionPlan>()
             .HasOne(x => x.PlanPeriod).WithMany().HasPrincipalKey(x => x.PlanId)
             .HasForeignKey("planid");

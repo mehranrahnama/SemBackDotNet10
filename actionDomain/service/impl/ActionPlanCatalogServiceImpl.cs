@@ -3,6 +3,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -135,13 +137,23 @@ public class ActionPlanCatalogServiceImpl : IActionPlanCatalogService
     // TODO(signature): CartableStatusPair cartableStatusPair ) { semLogger.info("Enter the method"); actionPlanCatalog.setTaskUrl(generateReplanTaskUrl( actionPlanCatalog.getId(), car
     public void validateActionDateRange(string? startDate, string? endDate)
     {
-        // TODO: بدنه‌ی متد از جاوا منتقل شود — endDate)
-        throw new NotImplementedException();
+        var currentYear = new PersianCalendar().GetYear(DateTime.Now);
+        var maxYear = currentYear + _MAX_ALLOWED_YEARS_AFTER_CURRENT;
+        if (!isActionDateInRange(startDate, maxYear) || !isActionDateInRange(endDate, maxYear))
+            throw new SemBackDotNet10.Common.exception.BusinessException("بازه زمانی اقدام مجاز نیست.");
+
+        var start = startDate!.Split('/').Select(part => int.Parse(part, CultureInfo.InvariantCulture)).ToArray();
+        var end = endDate!.Split('/').Select(part => int.Parse(part, CultureInfo.InvariantCulture)).ToArray();
+        if ((start[0], start[1], start[2]).CompareTo((end[0], end[1], end[2])) > 0)
+            throw new SemBackDotNet10.Common.exception.BusinessException("تاریخ شروع اقدام باید قبل از تاریخ پایان باشد.");
     }
     bool isActionDateInRange(string? date, int maxYear)
     {
-        // TODO: بدنه‌ی متد از جاوا منتقل شود — maxYear)
-        throw new NotImplementedException();
+        if (date is null || !Regex.IsMatch(date, @"\A[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}\z"))
+            return false;
+
+        var year = int.Parse(date.AsSpan(0, 4), CultureInfo.InvariantCulture);
+        return year >= _MIN_ALLOWED_ACTION_YEAR && year <= maxYear;
     }
     string? generateReplanTaskUrl(long? id, long? newStatus, long? oldStatus)
     {
@@ -150,8 +162,9 @@ public class ActionPlanCatalogServiceImpl : IActionPlanCatalogService
     }
     public void setIsPlanned(ActionPlanCatalog actionPlanCatalog)
     {
-        // TODO: بدنه‌ی متد از جاوا منتقل شود — actionPlanCatalog)
-        throw new NotImplementedException();
+        ArgumentNullException.ThrowIfNull(actionPlanCatalog);
+        actionPlanCatalog.IsPlanned = true;
+        _actionPlanCatalogRepository.SaveAsync(actionPlanCatalog).GetAwaiter().GetResult();
     }
     // @Transactional
     public ActionPlanCatalog edit(ActionPlanCatalogDto actionPlanCatalogDto)
@@ -179,8 +192,15 @@ public class ActionPlanCatalogServiceImpl : IActionPlanCatalogService
     }
     public Dictionary<string?,string?> getDates(long? id)
     {
-        // TODO: بدنه‌ی متد از جاوا منتقل شود — id)
-        throw new NotImplementedException();
+        var catalog = findByIdOrElseThrow(id);
+        var dateLog = _actionDateLogRepository.findFirstByActionPlanCatalogOrderByModifiedDateDesc(catalog);
+        var endDate = dateLog is not null && catalog.ReplannedStatus is not (null or 0 or 70)
+            ? dateLog.EndDateOld : catalog.EndDate;
+        return new()
+        {
+            ["startDate"] = catalog.StartDate,
+            ["endDate"] = endDate
+        };
     }
     public List<ActionPlanCatalog> findByPlanIdAndLevelIdAndPayeshgar(long? planId, long? levelId, long? payeshgarId)
     {
