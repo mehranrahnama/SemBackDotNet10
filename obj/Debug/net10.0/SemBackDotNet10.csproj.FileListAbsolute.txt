@@ -9192,4 +9192,6 @@ D:\projects\SemBackDotNet10\obj\verify-catalog-read\runtimes\win-x86\native\msal
 D:\projects\SemBackDotNet10\obj\verify-catalog-read\runtimes\linux\lib\net10.0\System.DirectoryServices.Protocols.dll
 D:\projects\SemBackDotNet10\obj\verify-catalog-read\runtimes\osx\lib\net10.0\System.DirectoryServices.Protocols.dll
 D:\projects\SemBackDotNet10\obj\verify-catalog-read\runtimes\win\lib\net10.0\System.DirectoryServices.Protocols.dll
-D:\projects\SemBackDotNet10\obj\Debug\net10.0\compressed\a407sxwfnd-{0}-yhr72bc3ll-yhr72bc3ll.gz
+D:\projects\SemBackDotNet10\obj\Debug\net10.0\compressed\a407sxwfnd-{0}-rg213g3fe3-rg213g3fe3.gz
+D:\projects\SemBackDotNet10\bin\Debug\net10.0\SemBackDotNet10.exe
+D:\projects\SemBackDotNet10\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
